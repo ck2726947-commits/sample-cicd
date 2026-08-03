@@ -10,16 +10,16 @@ pipeline {
         }
 
         stage('Install Dependencies') {
-            steps {
-                bat 'pip install -r requirements.txt'
-            }
-        }
+    steps {
+        bat 'C:\\Users\\ChetanKumar\\AppData\\Local\\Python\\bin\\python.exe -m pip install -r requirements.txt'
+    }
+}
 
-        stage('Run Tests') {
-            steps {
-                bat 'python -m pytest'
-            }
-        }
+       stage('Run Tests') {
+    steps {
+        bat 'C:\\Users\\ChetanKumar\\AppData\\Local\\Python\\bin\\python.exe -m pytest'
+    }
+}
 
         stage('Build Docker Image') {
             steps {
