@@ -22,16 +22,13 @@ pipeline {
 }
 
         stage('Build Docker Image') {
-            steps {
-                bat 'docker build -t sample-cicd .'
-            }
-        }
+    steps {
+        bat '"C:\\Users\\ChetanKumar\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t sample-cicd .'
+    }
+}
 
         stage('Deploy Container') {
-            steps {
-                bat 'docker rm -f sample-cicd || exit 0'
-                bat 'docker run -d --name sample-cicd sample-cicd'
-            }
-        }
+    steps {
+        bat '"C:\\Users\\ChetanKumar\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" run -d -p 8080:8080 sample-cicd'
     }
 }
